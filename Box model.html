@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model Demonstration (Inline)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #0056b3;
+        }
+
+        .box {
+            width: 200px; /* Base width for all boxes */
+            padding: 20px;
+            margin-bottom: 30px; /* Space between boxes */
+            border: 5px solid;
+            background-clip: content-box; /* To see content background clearly */
+        }
+
+        /* Box One: content-box example */
+        .box-one {
+background-color: #e6ffe6; /* Light green */
+            border-color: #4CAF50; /* Green border */
+            padding: 25px;
+            margin: 40px auto; /* Center the box horizontally with larger top/bottom margin */
+            box-sizing: content-box;
+            /* With content-box, width (200px) + padding (25px*2) + border (5px*2) = total width */
+            /* Total width = 200 + 50 + 10 = 260px */
+        }
+
+        /* Box Two: border-box example */
+        .box-two {
+            background-color: #e6f7ff; /* Light blue */
+            border-color: #2196F3; /* Blue border */
+            padding: 30px;
+            margin: 20px auto; /* Center the box horizontally */
+            box-sizing: border-box;
+            /* With border-box, width (200px) includes padding and border */
+            /* Content width = 200 - (30px*2) - (5px*2) = 200 - 60 - 10 = 130px */
+        }
+
+        /* Box Three: Another content-box example with different dimensions */
+        .box-three {
+            background-color: #fff0e6; /* Light orange */
+            border-color: #FF9800; /* Orange border */
+            width: 150px; /* Different width */
+            padding: 15px 30px; /* Different padding values (top/bottom, left/right) */
+            margin: 50px auto; /* Centerthe box horizontally with larger margin */
+            box-sizing: content-box;
+            /* Total width = 150 + (30px*2) + (5px*2) = 150 + 60 + 10 = 220px */
+        }
+
+        .box h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        .box p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Problem Statement:</h1>
+    <h2>Demonstrating the CSS Box Model</h2>
+
+    <div class="box box-one">
+        <h3>Box One</h3>
+        <p>This box uses <code>box-sizing: content-box;</code>. It has its own unique background, padding, border, and margin values.</p>
+    </div>
+
+    <div class="box box-two">
+        <h3>Box Two</h3>
+        <p>This box uses <code>box-sizing: border-box;</code>. It also has distinct background, padding, border, and margin values.</p>
+    </div>
+<div class="box box-three">
+        <h3>Box Three</h3>
+        <p>This box also uses <code>box-sizing: content-box;</code> but with different dimensions to illustrate the effect. It has its own styles.</p>
+    </div>
+</body>
+</html>
